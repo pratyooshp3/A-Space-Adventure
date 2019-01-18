@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Meteor
   - GravPull
+  - planet
   layers:
   - Default
   - TransparentFX
