@@ -4,8 +4,7 @@ using System;
 
 public class PathNavigation : MonoBehaviour
 {
-    public Transform[] marsPath;
-    public Transform[] jupiterPath;
+    public Transform[] path;
     public GameObject finish;
 
     Vector3 direction;
@@ -14,12 +13,12 @@ public class PathNavigation : MonoBehaviour
 
 
     float rotateSpeed = 2.0f;
-
+    float time = 20.0f;
 
     void Start()
     {
         iTween.Init(this.gameObject);
-        tween(marsPath);
+        tween();
     }
     private void Update()
     {
@@ -39,37 +38,13 @@ public class PathNavigation : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        iTween.DrawPath(marsPath);
+        iTween.DrawPath(path);
     }
 
-    void tween(Transform[] navPath)
+    void tween()
     {
-        float time = 0.0f;
-        if(navPath == marsPath)
-        {
-            time = 20.0f;
-        }
-        iTween.MoveTo(gameObject, iTween.Hash("path", navPath, "time", time, "orienttopath", true, "looktime", .9, "easetype", "easeInOutSine", "oncomplete", "complete"));
+        iTween.MoveTo(gameObject, iTween.Hash("path", path, "time", time, "orienttopath", true, "looktime", .9, "easetype", "easeInOutSine", "oncomplete", "complete"));
        // iTween.MoveTo(gameObject, iTween.Hash("path", navPath, "time", time,  "easetype", "easeInOutSine", "oncomplete", "complete"));
     }
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.CompareTag("planet"))
-        {
-            iTween.Pause();
-        }
-    }
-    
-        
-    
-    /*void reset(){
-		buttonActivated=false;
-		transform.position=new Vector3(0,0,0);
-		transform.eulerAngles=new Vector3(0,0,0);
-	}*/
 
-    void complete()
-    {
-        buttonActivated = true;
-    }
 }

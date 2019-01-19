@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A-Space-Adventure", "A-Space-Adventure.csproj", "{BB74487F-EDEC-DBCD-5498-29AFC9C4EF12}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A-Space-Adventure.Plugins", "A-Space-Adventure.Plugins.csproj", "{EF3569CB-3EA2-233D-9333-C294459CC8C3}"
