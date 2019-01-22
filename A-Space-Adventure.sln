@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A-Space-Adventure", "A-Space-Adventure.csproj", "{BB74487F-EDEC-DBCD-5498-29AFC9C4EF12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A-Space-Adventure.Plugins", "A-Space-Adventure.Plugins.csproj", "{EF3569CB-3EA2-233D-9333-C294459CC8C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{BB74487F-EDEC-DBCD-5498-29AFC9C4EF12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB74487F-EDEC-DBCD-5498-29AFC9C4EF12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB74487F-EDEC-DBCD-5498-29AFC9C4EF12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF3569CB-3EA2-233D-9333-C294459CC8C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF3569CB-3EA2-233D-9333-C294459CC8C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF3569CB-3EA2-233D-9333-C294459CC8C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF3569CB-3EA2-233D-9333-C294459CC8C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

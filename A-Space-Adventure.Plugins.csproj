@@ -5,9 +5,9 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BB74487F-EDEC-DBCD-5498-29AFC9C4EF12}</ProjectGuid>
+    <ProjectGuid>{EF3569CB-3EA2-233D-9333-C294459CC8C3}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
@@ -15,7 +15,7 @@
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectGenerator>VSTU</UnityProjectGenerator>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityProjectType>GamePlugins:3</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.4.15f1</UnityVersion>
     <RootNamespace></RootNamespace>
@@ -238,26 +238,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="A-Space-Adventure.Plugins.csproj">
-      <Project>{EF3569CB-3EA2-233D-9333-C294459CC8C3}</Project>
-      <Name>A-Space-Adventure.Plugins</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Assets\Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
-    <Compile Include="Assets\Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
-    <Compile Include="Assets\Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
-    <Compile Include="Assets\Assets\EffectExamples\Shared\Scripts\GunShoot.cs" />
-    <Compile Include="Assets\Assets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
-    <Compile Include="Assets\Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
-    <Compile Include="Assets\Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
-    <Compile Include="Assets\Assets\Scripts\Graham Scripts - Gravity etc\HeadsetManager.cs" />
-    <Compile Include="Assets\Assets\Scripts\Graham Scripts - Gravity etc\PlanetGravitationalPull.cs" />
-    <Compile Include="Assets\Assets\Scripts\Graham Scripts - Gravity etc\PlanetGravityActivator.cs" />
-    <Compile Include="Assets\Assets\Scripts\Graham Scripts - Gravity etc\PlanetGravityNeutralizer.cs" />
-    <Compile Include="Assets\Assets\Scripts\GravityPull.cs" />
-    <Compile Include="Assets\Assets\Scripts\PathNavigation.cs" />
-    <Compile Include="Assets\Asteroids Pack\Assets\Scripts\RandomRotator.cs" />
+    <Compile Include="Assets\Plugins\Pixelplacement\iTween\iTween.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
