@@ -13,7 +13,7 @@ public class PathNavigation : MonoBehaviour
 
 
     float rotateSpeed = 2.0f;
-    float time = 20.0f;
+    float time = 70.0f;
 
     void Start()
     {

@@ -18,26 +18,23 @@ public class GravityPull : MonoBehaviour
     float canFlash = 0.0f;
     Coroutine flasher = null;
 
-
-    public bool inPull;
+  
     private void Start()
     {
-        //redLight.gameObject.SetActive(false);
-        inPull = false;
+        redLight.gameObject.SetActive(false);
     }
 
 
     void Shake()
     {
-        if (inPull)
-        {
+
             originPosition = transform.position;
             originRotation = transform.rotation;
-            shake_intensity = .0012f;
+            shake_intensity = .0005f;
             transform.position = originPosition + Random.insideUnitSphere * shake_intensity;
-        }
+        
     }
-    /*IEnumerator Flash()
+   IEnumerator Flash()
     {
         while (true)
         {
@@ -51,7 +48,7 @@ public class GravityPull : MonoBehaviour
             }
             yield return new WaitForSeconds(1.0f);
         }
-    }*/
+    }
 
 
     private void OnTriggerStay(Collider col)
@@ -65,16 +62,15 @@ public class GravityPull : MonoBehaviour
     {
         if (col.CompareTag("GravPull"))
         {
-            inPull = true;
-            //flasher = StartCoroutine(Flash());
+            flasher = StartCoroutine(Flash());
         }
     }
     private void OnTriggerExit(Collider col)
     {
         if (col.CompareTag("GravPull"))
         {
-            inPull = false;
-            //StopCoroutine(flasher);
+            StopCoroutine(flasher);
+            redLight.gameObject.SetActive(false);
         }
     }
 }
