@@ -30,7 +30,7 @@ public class GravityPull : MonoBehaviour
 
             originPosition = transform.position;
             originRotation = transform.rotation;
-            shake_intensity = .0005f;
+            shake_intensity = .003f;
             transform.position = originPosition + Random.insideUnitSphere * shake_intensity;
         
     }

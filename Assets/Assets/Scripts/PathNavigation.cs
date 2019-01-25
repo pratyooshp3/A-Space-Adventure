@@ -13,17 +13,13 @@ public class PathNavigation : MonoBehaviour
 
 
     float rotateSpeed = 2.0f;
-    float time = 70.0f;
+    float time = 180.0f;
 
     void Start()
     {
         iTween.Init(this.gameObject);
+        //Invoke("tween", 10.0f);
         tween();
-    }
-    private void Update()
-    {
-
-        
     }
 
 
@@ -43,8 +39,10 @@ public class PathNavigation : MonoBehaviour
 
     void tween()
     {
-        iTween.MoveTo(gameObject, iTween.Hash("path", path, "time", time, "orienttopath", true, "looktime", .9, "easetype", "easeInOutSine", "oncomplete", "complete"));
-       // iTween.MoveTo(gameObject, iTween.Hash("path", navPath, "time", time,  "easetype", "easeInOutSine", "oncomplete", "complete"));
+        iTween.MoveTo(gameObject, iTween.Hash("path", path, "time", time, "orienttopath", true, "easetype", "linear", "looktime", .5, "oncomplete", "complete"));
+        // iTween.MoveTo(gameObject, iTween.Hash("path", path, "time", time, "orienttopath",  "easetype", "easeInOutSine", "oncomplete", "complete"));
     }
+
+
 
 }

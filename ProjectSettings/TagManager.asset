@@ -8,6 +8,9 @@ TagManager:
   - Meteor
   - GravPull
   - planet
+  - FxTemporaire
+  - projectile
+  - AudioTrigger
   layers:
   - Default
   - TransparentFX
