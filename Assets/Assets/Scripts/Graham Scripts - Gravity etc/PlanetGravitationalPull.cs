@@ -13,6 +13,10 @@ public class PlanetGravitationalPull : MonoBehaviour {
     public float timePulled;
     public iTween iTweenScript;
     public GameObject thisShip;
+    public float pullTimeLimit;
+    public PlanetGravityNeutralizer planetGravitationalNeutralizer;
+    public bool neutralized;
+    public GravityPull gravityPull;
 
     // Use this for initialization
     void Start () {
@@ -25,11 +29,12 @@ public class PlanetGravitationalPull : MonoBehaviour {
         if (Time.time < 2)
         {
             iTweenScript = thisShip.GetComponent<iTween>();
-            Debug.Log(Time.time);
+            //Debug.Log(Time.time);
         }
         //if in atmosphere (per below trigger), apply force to ship, moving it towards planet
-        if (withinAtmosphere & timePulled < 10.0)
+        if (withinAtmosphere & timePulled < pullTimeLimit)
         {
+            planetGravitationalNeutralizer.button.GetComponent<Rigidbody>().isKinematic = false;
             iTweenScript.enabled = false;
             timePulled = timePulled + Time.deltaTime;
             float gravityPace = gravitationalSpeed * Time.deltaTime;
@@ -37,13 +42,15 @@ public class PlanetGravitationalPull : MonoBehaviour {
             //Debug.Log("gravity pace: " + gravityPace);
         }
 
-        //reset the timer, so that ship can be pulled into another planet later & reset atmosphere
-        if (timePulled > 10.0)
+        //cancel force to ship
+        if (timePulled > pullTimeLimit || planetGravitationalNeutralizer.buttonBeenPushed & neutralized !=true)
         {
-            Debug.Log("TimeReset");
+            Debug.Log("Pull Neutralized & GravityPull Script DeActivated");
             iTweenScript.enabled = true;
-            timePulled = 0;
             withinAtmosphere = false;
+            neutralized = true;
+            gravityPull.enabled = false;
+
         }
 	}
     

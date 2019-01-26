@@ -22,43 +22,46 @@ public class PlanetGravityNeutralizer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (buttonIsPushed)
+        if (buttonIsPushed & buttonBeenPushed != true)
         {
             //deactivate gravitational pull
             planetGravitationalPull.withinAtmosphere = false;
             button.GetComponent<Renderer>().material = pushedMaterial;
             pullDeactivatedText.enabled = true;
             buttonBeenPushed = true;
+            button.GetComponent<Rigidbody>().isKinematic = true;
+            Debug.Log("Button Pushed");
         }
         //if the user lets up on the button, neutralizer shuts off, text disappears
-        else if (buttonBeenPushed)
-        {
-            planetGravitationalPull.withinAtmosphere = true;
-            button.GetComponent<Renderer>().material = notPushedMaterial;
-            pullDeactivatedText.enabled = false;
+        //Commenting this out as it causes complication - one push does the job:
+        //else if (buttonBeenPushed)
+        //{
+        //    planetGravitationalPull.withinAtmosphere = true;
+        //    button.GetComponent<Renderer>().material = notPushedMaterial;
+        //    pullDeactivatedText.enabled = false;
 
             //PROBLEM #1:
             //need to enter in a line here that if the 10s is up, atmosphereEnterable (of that planet),
             //needs to be turned to false (so user doesnt have to hold button forever) 
-        }
+        //}
 
     }
 
     //when red button is pushed into the collider of the button's base, mark as pushed
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.name == "RedButton")
+        if (other.gameObject.name == "RedButton")
         {
             buttonIsPushed = true;
         }
     }
-    void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.name == "RedButton")
-        {
-            buttonIsPushed = false;
-        }
-    }
+    //void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.name == "RedButton")
+    //    {
+    //        buttonIsPushed = false;
+    //    }
+    //}
 
 
 }
