@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Space Adventure Intro.unity
+  isLoaded: 1
+  isActive: 1

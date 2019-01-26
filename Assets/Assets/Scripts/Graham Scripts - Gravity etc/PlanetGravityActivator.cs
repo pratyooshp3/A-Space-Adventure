@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlanetGravityActivator : MonoBehaviour {
-    public bool atmosphereEnterable = true;
+
+    //Documentation: Appled to planet. Allows "PlanetGravitationalPull" to be usable or not & specifies that only
+    //the ship will be pulled in my gravity
+
+    public bool atmosphereEnterable;
     public PlanetGravitationalPull planetGravitationalPull;
     public GameObject ship;
 

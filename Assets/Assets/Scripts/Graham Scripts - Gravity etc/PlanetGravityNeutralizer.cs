@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class PlanetGravityNeutralizer : MonoBehaviour {
 
+    //Documentation: Appled to Button. Deactivates the Gravitational pull applied by "PlanetGravitationalPull", using button.
+
     public PlanetGravitationalPull planetGravitationalPull;
     public GameObject button;
     public Material pushedMaterial;
     public Material notPushedMaterial;
     public bool buttonPushed = false;
     public Text pullDeactivatedText;
+    public bool buttonBeenPushed = false;
 
     // Use this for initialization
     void Start () {
@@ -25,9 +28,10 @@ public class PlanetGravityNeutralizer : MonoBehaviour {
             planetGravitationalPull.withinAtmosphere = false;
             button.GetComponent<Renderer>().material = pushedMaterial;
             pullDeactivatedText.enabled = true;
+            buttonBeenPushed = true;
         }
         //if the user lets up on the button, neutralizer shuts off, text disappears
-        else
+        else if (buttonBeenPushed)
         {
             planetGravitationalPull.withinAtmosphere = true;
             button.GetComponent<Renderer>().material = notPushedMaterial;
