@@ -11,7 +11,7 @@ public class PlanetGravityNeutralizer : MonoBehaviour {
     public GameObject button;
     public Material pushedMaterial;
     public Material notPushedMaterial;
-    public bool buttonPushed = false;
+    public bool buttonIsPushed = false;
     public Text pullDeactivatedText;
     public bool buttonBeenPushed = false;
 
@@ -22,7 +22,7 @@ public class PlanetGravityNeutralizer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (buttonPushed)
+        if (buttonIsPushed)
         {
             //deactivate gravitational pull
             planetGravitationalPull.withinAtmosphere = false;
@@ -47,11 +47,17 @@ public class PlanetGravityNeutralizer : MonoBehaviour {
     //when red button is pushed into the collider of the button's base, mark as pushed
     void OnCollisionEnter(Collision collision)
     {
-        buttonPushed = true;
+        if (collision.gameObject.name == "RedButton")
+        {
+            buttonIsPushed = true;
+        }
     }
     void OnCollisionExit(Collision collision)
     {
-        buttonPushed = false;
+        if (collision.gameObject.name == "RedButton")
+        {
+            buttonIsPushed = false;
+        }
     }
 
 
