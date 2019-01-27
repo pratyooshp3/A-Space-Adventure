@@ -18,8 +18,13 @@ public class NoticeBoard_VR : MonoBehaviour {
 	public Text MenuTitle; 
 	public Text WarningBox;
 
+
+
+	//private variables
 	private int currentcount =1;
 	private int nextcount =1;
+
+	private AudioSource notificationvoice;//Audio Source 
 
 
 	private Dictionary<int,string> statusMap;
@@ -29,29 +34,31 @@ public class NoticeBoard_VR : MonoBehaviour {
 		void Start() {
 			
 		    Destination = "Planet IDA";
-		    craftname="USS-Enterprise";
+		    craftname="USS-Valkyrie";
 		    currentStatus.name = "Current Status";
 		    NextStatus.name = "Next Instruction";
+		    notificationvoice = GetComponent<AudioSource>();
 		   // Initlaize Dictionary
 			statusMap = new Dictionary<int,string>{ 
-				{1,"Boarding ISS...."},{2,"Boarding Spaceship: "+craftname+"...."},{3,"Starting your mission to " +Destination},
-				{4, "Approaching Mars....."},{5, "Approaching Asteriod Belt,Enabling AutoPilot to avoid collision"},
+			    {1,"Starting your mission to " +Destination},{2,"Leaving Earth's Orbit.... " +Destination},
+			    {3, "Approaching Moon....."},
+				{4, "Approaching Mars....."},{5,"Approaching Tesla Roadster...."},
 				{6,"Approaching Jupiter....."},
 				{7, "WARNING !! WARNING !! "+craftname+" Out Of Control. AutoPilot Not Operable!!"},
-				{8, "New path calculated.Restoring Control of craft to Pilot."},{9," Approaching Saturn,Uranus,Neptune"},
-				{10,"Approaching Pluto and edge of Solar System.Auto Pilot Restored"}
+			    {8, "New path calculated. Approaching Saturn,Uranus,Neptune"}
+
 			};
 		  
 			warningMap= new Dictionary<int,string>{ 
-				{1,"zero gravity Floating. Nothing to worry about"},{3,"Possible Anamolies detected on your path to "+Destination},
+				{1,"Possible Anamolies detected on your path to "+Destination},
 				{6,"Warning: AutoPilot Failing...."},
 				{7,"Hit the big RED Button for help.\n"+craftname+" entering atmosphere in 5 minutes."}
 			};
 
 			instrMap = new Dictionary<int,string> { 
-				{1,"Access TelePort Point Closest to you to Board ISS. "},{2,"Checking Craft Integrity..."},
-				{3,"Integrity Check Complete.Please Proceed with Caution."},
-				{6,"Pilot must take over control,if Autopilot fails."},{7,"!!!Hit the big RED Button for help!!!"},
+			    {1,"Integrity Check Complete.Please Proceed with Caution."},
+				{6,"Pilot must take over control,if Autopilot fails."},
+			    {7,"!!!Hit the big RED Button for help!!!"},
 
 			};
 			
@@ -81,6 +88,7 @@ public class NoticeBoard_VR : MonoBehaviour {
 	    */ 
 		public void UpdateCurrentStatus(){
 		if(currentcount<= statusMap.Count)  currentcount++;
+		    notificationvoice.Play(0);
 			GetCurrentStatus();
 
 		}
@@ -104,6 +112,7 @@ public class NoticeBoard_VR : MonoBehaviour {
 			{
 				nextcount++;
 				if(instrMap.ContainsKey(nextcount)) {
+				    notificationvoice.Play(0);
 					if(nextcount==7) 
 						infoBox.color=Color.red;
 					else
@@ -127,8 +136,9 @@ public class NoticeBoard_VR : MonoBehaviour {
 				infoBox.text = "\n STATUS: No Further anamolies detected on your path. Enjoy Rest of your journey to "+Destination;
 				return;
 		    }
-			if (!instrMap.ContainsKey(nextcount))
-			instruction = "No immediate threats detected.No action needs to be taken.";
+			if (!instrMap.ContainsKey (nextcount)) {
+				instruction = "No immediate threats detected.No action needs to be taken.";
+			}
 			else 
 				instruction = instrMap[nextcount];
 
