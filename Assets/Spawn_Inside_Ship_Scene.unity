@@ -1080,7 +1080,7 @@ Prefab:
     - target: {fileID: 81503930491302624, guid: 00d4ff4ca6e2afb45ac0881024f50a62,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4312866694903626, guid: 00d4ff4ca6e2afb45ac0881024f50a62, type: 2}
       propertyPath: m_LocalRotation.z
@@ -1099,6 +1099,10 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 340d4b29cc416483fbe05b7e292b16d6, type: 2}
+    - target: {fileID: 1726592633515714, guid: 00d4ff4ca6e2afb45ac0881024f50a62, type: 2}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114027244586677876, guid: 00d4ff4ca6e2afb45ac0881024f50a62, type: 2}
     - {fileID: 114822229678178848, guid: 00d4ff4ca6e2afb45ac0881024f50a62, type: 2}
@@ -1292,6 +1296,19 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 11489174, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000014254142504, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000014031267948, guid: 4d293c8e162f3874b982baadd71153d2,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11420968, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
@@ -1460,7 +1477,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88aed77f1e00d49498d65fe951e238c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  narrate_scene2: {fileID: 0}
 --- !u!82 &1122470138
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1904,13 +1920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c43b16f81fb1864fb2dafdd202fac3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Destination: Planet IDA
-  craftname: USS-Valkyrie
-  currentStatus: {fileID: 254736649}
-  NextStatus: {fileID: 1912084137}
-  infoBox: {fileID: 1614115698}
-  MenuTitle: {fileID: 862905876}
-  WarningBox: {fileID: 1421724032}
 --- !u!114 &1372134660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1919,7 +1928,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1372134655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69e1c8b7142f54a4ab40f20ba2287547, type: 3}
+  m_Script: {fileID: 11500000, guid: d0fa9b071473347a3a72b974675593af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Destination: Planet IDA
@@ -2817,7 +2826,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2066982290}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fb45a94546143348a3bc63aa7b2dcbd, type: 3}
   m_Name: 
@@ -2856,14 +2865,14 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2066982290}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!82 &2066982300
 AudioSource:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2066982290}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -2943,7 +2952,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2066982290}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67f253cff2c2a7749b9a22970003745c, type: 3}
   m_Name: 
