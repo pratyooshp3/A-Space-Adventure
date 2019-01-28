@@ -1,11 +1,12 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class NoticeBoard_VR : MonoBehaviour {
+
+public class Scene2_NoticeBoard_VR : MonoBehaviour {
 
 	// Use this for initialization
 	public string Destination; 
@@ -30,9 +31,11 @@ public class NoticeBoard_VR : MonoBehaviour {
 	private Dictionary<int,string> statusMap;
 	private Dictionary<int,string> warningMap;
 	private Dictionary<int,string> instrMap;
+    
+
 
 		void Start() {
-			
+		    UnityEngine.XR.XRSettings.enabled = false;
 		    Destination = "Planet IDA";
 		    craftname="USS-Valkyrie";
 		    currentStatus.name = "Current Status";
