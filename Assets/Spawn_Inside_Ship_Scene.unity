@@ -241,7 +241,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
+    m_ColorMultiplier: 1.07
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
@@ -290,8 +290,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 44f3c6b765aa54467bff72e3be6b3f87, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 71df6d228f4ab4245b9791d80663baa4, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -363,7 +363,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 15e325d78522e48c9a9ca901e1524899, type: 3}
+    m_Font: {fileID: 12800000, guid: ad5461f631424ed4ba5abca867e9a1e7, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -660,7 +660,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 15e325d78522e48c9a9ca901e1524899, type: 3}
+    m_Font: {fileID: 12800000, guid: ad5461f631424ed4ba5abca867e9a1e7, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -889,7 +889,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 15e325d78522e48c9a9ca901e1524899, type: 3}
+    m_Font: {fileID: 12800000, guid: ad5461f631424ed4ba5abca867e9a1e7, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -1428,6 +1428,12 @@ MonoBehaviour:
   gravitationalSpeed: 0.75
   targetPlanet: {fileID: 0}
   timePulled: 0
+  iTweenScript: {fileID: 0}
+  thisShip: {fileID: 0}
+  pullTimeLimit: 0
+  planetGravitationalNeutralizer: {fileID: 0}
+  neutralized: 0
+  gravityPull: {fileID: 0}
 --- !u!54 &1122470136
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1820,6 +1826,7 @@ GameObject:
   - component: {fileID: 1372134658}
   - component: {fileID: 1372134657}
   - component: {fileID: 1372134659}
+  - component: {fileID: 1372134660}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -1871,8 +1878,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f923677589c704641b68a5008b6bfebd, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: fd7cf88ee9b05f94f84bd7686a9669a6, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1895,6 +1902,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c43b16f81fb1864fb2dafdd202fac3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Destination: Planet IDA
+  craftname: USS-Valkyrie
+  currentStatus: {fileID: 254736649}
+  NextStatus: {fileID: 1912084137}
+  infoBox: {fileID: 1614115698}
+  MenuTitle: {fileID: 862905876}
+  WarningBox: {fileID: 1421724032}
+--- !u!114 &1372134660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1372134655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e1c8b7142f54a4ab40f20ba2287547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Destination: Planet IDA
@@ -1962,7 +1987,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 15e325d78522e48c9a9ca901e1524899, type: 3}
+    m_Font: {fileID: 12800000, guid: ad5461f631424ed4ba5abca867e9a1e7, type: 3}
     m_FontSize: 13
     m_FontStyle: 0
     m_BestFit: 0
@@ -1974,7 +1999,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'WARNING:  HIT THE RED BUTTON INCASE OF EMERGENCY'
+  m_Text: '
+
+    WARNING:  HIT THE RED BUTTON INCASE OF EMERGENCY'
 --- !u!222 &1421724033
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2184,7 +2211,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 15e325d78522e48c9a9ca901e1524899, type: 3}
+    m_Font: {fileID: 12800000, guid: ad5461f631424ed4ba5abca867e9a1e7, type: 3}
     m_FontSize: 13
     m_FontStyle: 0
     m_BestFit: 0
@@ -2196,7 +2223,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'STATUS: Calculating Flight Path...
+  m_Text: '
+
+    STATUS: Calculating Flight Path...
 
 
     Instruction: You will be notified with Furhter instructions.'
@@ -2416,8 +2445,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 44f3c6b765aa54467bff72e3be6b3f87, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 71df6d228f4ab4245b9791d80663baa4, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2555,7 +2584,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 48cd57dcda3034c169feb2d01f6f4489, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b931ea164c1411344a9c4ece0ebd74e8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2920,4 +2949,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioFiles: []
-  totest: {fileID: 0}
