@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: ea1001a6626353541ab4d4b39f4c3569
-timeCreated: 1452307069
-licenseType: Store
+guid: 8f3cf571da45432438d5048c9a7f178c
 MonoImporter:
+  externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - controllerMaterial: {fileID: 2100000, guid: 11b050e661ec0cf48a289a7266451e91,
