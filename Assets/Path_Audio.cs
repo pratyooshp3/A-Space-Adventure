@@ -33,11 +33,26 @@ public class Path_Audio : MonoBehaviour {
         }
         else if (col.gameObject.name == "Jupiter")
         {
-			      updateUI.UpdateCurrentStatus();// UI Update
+			updateUI.UpdateCurrentStatus();// UI Update
             audio.clip = audioFiles[5];
             audio.Play();
         }
-		//updateUI.UpdateCurrentStatus();// UI Update
+        else if (col.gameObject.name == "SaturnAudioTrigger")
+        {
+            updateUI.UpdateCurrentStatus();// UI Update
+            audio.clip = audioFiles[7];
+            audio.Play();
+        }
+        //updateUI.UpdateCurrentStatus();// UI Update
+    }
+    public void OnTriggerExit(Collider col)
+    {
+        if(col.gameObject.name == "Jupiter")
+        {
+            audio.Stop();
+            audio.clip = audioFiles[6];
+            audio.Play();
+        }
     }
     IEnumerator EarthAndMoon()
     {
